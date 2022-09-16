@@ -9,6 +9,7 @@ const pauseBtn = $(".app-tool__btn.app-tool__btn—-pause");
 const song = $(".app-tool__wrapper--song .app-tool__option-list a");
 const activeSongField = $(".app-tool__active-song");
 const activeSong = $("#audio");
+const ringSound = $("#endMeditation");
 const timmingOption = $(".app-tool__wrapper--timming .app-tool__option-list a");
 const timer = $(".app__timer span");
 
@@ -36,8 +37,8 @@ const songList = [
 ];
 
 const timmingOptions = [ 1, 5, 10, 15, 20 ];
-let selectedTiming = 5;
-let finishCounting = false;
+let selectedTiming = 0;
+let intervalId;
 
 //Render list of songs
 $(".app-tool__wrapper.app-tool__wrapper--song .app-tool__option-list").innerHTML = songList.map( song => (
@@ -57,7 +58,7 @@ const renderCurrentSong = (currentSong) => {
     const oldSong = $(".app-tool__active-song h2")
     if (oldSong) {
         activeSongField.removeChild(oldSong)
-    }
+    };
 
     //Add new active song
     const h2 = document.createElement("h2");
@@ -96,19 +97,6 @@ songBtn.onclick = () => {
 
 };
 
-//User plays/pauses song
-playBtn.onclick = () => {
-    playBtn.classList.add("hide");
-    pauseBtn.classList.add("show");
-    activeSong.play();
-
-};
-
-pauseBtn.onclick = () => {
-    playBtn.classList.remove("hide");
-    pauseBtn.classList.remove("show");
-    activeSong.pause();
-};
 
 //Play/switch song
 const handlePlaySong = (currentSong) => {
@@ -117,9 +105,6 @@ const handlePlaySong = (currentSong) => {
 
     //Render info of selected song
     renderCurrentSong(currentSong);
-
-    //Play selected song
-    playBtn.onclick();
 };
 
 //----------------------------------------------------------------
@@ -135,9 +120,7 @@ timmingBtn.onclick = () => {
 
 };
 
-console.log(selectedTiming)
-
-const countDown = (intervalId) => {
+const countDown = () => {
     let totalTime = selectedTiming * 60;
     console.log(totalTime)
     if (totalTime >= 0) {
@@ -153,22 +136,43 @@ const countDown = (intervalId) => {
         selectedTiming = totalTime / 60;
     } else {
         clearInterval(intervalId);
+        activeSong.pause();
+        ringSound.play();
     };
-
 
 };
 
+//Set timming
 const handleSetTime = (id) => {
     //Close menu of timing list
     timmingBtn.onclick();
 
     //Count Down
     selectedTiming = Number(id);
-    const intervalId = setInterval(() => {
-       countDown(intervalId)
-   }, 1000);
+    timer.innerText = `${selectedTiming}:00`;
+
 };
 
-if (finishCounting) {
-    console.log("finishCounting")
-}
+//User starts meditation 
+playBtn.onclick = () => {
+    playBtn.classList.add("hide");
+    pauseBtn.classList.add("show");
+
+    //Start song
+    activeSong.play();
+
+    //Start countDown
+    intervalId = setInterval(() => {
+        countDown()
+    }, 1000);
+};
+
+//User pauses meditation 
+pauseBtn.onclick = () => {
+    playBtn.classList.remove("hide");
+    pauseBtn.classList.remove("show");
+
+    //Pause song
+    activeSong.pause();
+    clearInterval(intervalId);
+};
