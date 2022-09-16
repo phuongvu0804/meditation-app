@@ -1,0 +1,194 @@
+:root {
+    --white: #fff;
+    --black: #000;
+    --primary: #feae4a;
+    --light-primary: rgba(254, 174, 74, 0.2);
+    --pink: rgb(255 175 149);
+    --light-pink: rgba(255, 175, 149, 0.6);
+    --gray: #4c5b65;
+}
+
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#app {
+    background-image: url("./assets/images/bg.webp");
+    background-position: top center;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+.app__msg {
+    padding-top: 200px;
+    text-align: center;
+}
+
+.app__msg h2 {
+    margin-top: 0;
+    font-size: 40px;
+}
+
+.app__msg p {
+    font-size: 20px;
+}
+
+.app__timer {
+    --timer-size: 500px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 48%;
+    height: var(--timer-size);
+    width: var(--timer-size);
+}
+
+  
+/* Removes SVG styling that would hide the time label */
+.base-timer__circle {
+    fill: none;
+    stroke: none;
+}
+  
+/* The SVG path that displays the timer's progress */
+.base-timer__path-elapsed {
+    stroke-width: 4px;
+    stroke: var(--primary);
+}
+
+.app__tool-list {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background: rgb(255, 255, 255, 0.4);
+    padding: 20px 0;
+}
+
+.app-tool__wrapper {
+    position: relative;
+    margin-right: 12px;
+}
+
+.app-tool__song-list {
+    position: absolute;
+    top: -140px;
+    left: -140px;
+    text-align: left;
+    background: rgb(255, 255, 255, 0.6);
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+.app-tool__song-list a,
+.app-tool__timming-list a{
+    display: block;
+    margin: 10px 0;
+    font-size: 14px;
+    font-weight: 300;
+    cursor: pointer;
+}
+
+.app-tool__song-list a:hover,
+.app-tool__timming-list a:hover{
+    text-decoration: underline;
+}
+
+.app-tool__timming-list {
+    position: absolute;
+    top: -140px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: left;
+    padding: 10px 20px;
+    border-radius: 20px;
+    background: rgb(255, 255, 255, 0.6);
+    width: 100px;
+}
+
+.app-tool__btn {
+    --btn-size: 50px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 22px;
+    width: var(--btn-size);
+    height: var(--btn-size);
+    border-radius: 50%;
+    background: var(--primary);
+    color: var(--white);
+}
+
+.app-tool__btn:hover {
+    background: rgba(254, 174, 74, 0.5);
+    transition: background 0.3s ease;
+}
+
+
+.app-tool__btn + .app-tool__btn {
+    margin-left: 12px;
+}
+
+.app-tool__btn—-timer {
+
+}
+
+.app-tool__btn—-songs {
+
+}
+
+.app-tool__btn—-pause {
+
+}
+
+.app-tool__btn—-play {
+
+}
+
+.app-tool__btn—-dark-theme {
+
+}
+
+.app-tool__btn—-light-theme {
+
+}
+
+/* Responsive for Mobile */
+@media screen and (max-width: 739px) {
+    .app__msg {
+        padding-top: 100px;
+        padding-left: 10px;
+        padding-right: 10px;
+
+    }
+
+    .app__msg h2 {
+
+    }
+
+    .app__msg p {
+        font-size: 14px;
+        font-weight: 300;
+    }
+
+    .app__timer {
+        --timer-size: 200px;
+        top: 44%
+    }
+
+    .app-tool__song-list {
+        left: 0;
+        width: 120px;
+    }
+}

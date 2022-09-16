@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;500;600;800;900&display=swap" rel="stylesheet">
+
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- App's logo -->
+    <link rel="icon" href="./assets/images/leaf-solid.svg" type="image/icon type">
+
+    <link rel="stylesheet" href="./style.css">
+    <title>Mediation App</title>
+</head>
+<body>
+    <div id="app">
+        <div class="app__msg">
+            <h2>Happier person</h2>
+            <p>Release your anger, open your heart to let it go</p>
+        </div>
+        <div class="app__timer">
+            <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+              <g class="base-timer__circle">
+                <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45" />
+              </g>
+            </svg>
+        </div>
+        <div class="app__tool-list">
+            <div class="app-tool__wrapper">
+                <button class="app-tool__btn app-tool__btn—-songs">
+                    <i class="fa-solid fa-music"></i>
+                </button>
+                <div class="app-tool__song-list">
+                    <a>Mediation</a>
+                    <a>Birds and nature</a>
+                    <a>Rainning sound</a>
+                </div>
+            </div>
+            <div class="app-tool__wrapper">
+                <button class="app-tool__btn app-tool__btn—-timer">
+                    <i class="fa-solid fa-clock"></i>
+                </button>
+                <div class="app-tool__timming-list">
+                    <a>5 minutes</a>
+                    <a>10 minutes</a>
+                    <a>15 minutes</a>
+                </div>
+            </div>
+            <button class="app-tool__btn app-tool__btn—-pause">
+                <i class="fa-solid fa-pause"></i>
+            </button>
+            <button class="app-tool__btn app-tool__btn—-play">
+                <i class="fa-solid fa-play"></i>
+            </button>
+            <button class="app-tool__btn app-tool__btn—-dark-theme">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+            <button class="app-tool__btn app-tool__btn—-light-theme">
+                <i class="fa-sharp fa-solid fa-sun"></i>
+            </button>
+        </div>
+    </div>
+</body>
+</html>
