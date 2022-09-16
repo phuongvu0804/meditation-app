@@ -81,18 +81,38 @@ body {
     margin-right: 12px;
 }
 
-.app-tool__song-list {
+.app-tool__wrapper--song .app-tool__option-list {
+    display: none;
     position: absolute;
-    top: -140px;
-    left: -140px;
+    top: -120px;
+    left: 50%;
+    transform: translateX(-50%);
     text-align: left;
     background: rgb(255, 255, 255, 0.6);
     padding: 10px 20px;
     border-radius: 20px;
+    min-width: 120px;
 }
 
-.app-tool__song-list a,
-.app-tool__timming-list a{
+.app-tool__wrapper--timming .app-tool__option-list {
+    display: none;
+    position: absolute;
+    top: -120px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: left;
+    padding: 10px 20px;
+    border-radius: 20px;
+    background: rgb(255, 255, 255, 0.6);
+    min-width: 100px;
+}
+
+.app-tool__btn.active ~ .app-tool__option-list {
+    display: block;
+}
+
+.app-tool__wrapper--song .app-tool__option-list a,
+.app-tool__wrapper--timming .app-tool__option-list a{
     display: block;
     margin: 10px 0;
     font-size: 14px;
@@ -100,21 +120,9 @@ body {
     cursor: pointer;
 }
 
-.app-tool__song-list a:hover,
-.app-tool__timming-list a:hover{
+.app-tool__wrapper--song .app-tool__option-list a:hover,
+.app-tool__wrapper--timming .app-tool__option-list a:hover{
     text-decoration: underline;
-}
-
-.app-tool__timming-list {
-    position: absolute;
-    top: -140px;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: left;
-    padding: 10px 20px;
-    border-radius: 20px;
-    background: rgb(255, 255, 255, 0.6);
-    width: 100px;
 }
 
 .app-tool__btn {
@@ -137,7 +145,7 @@ body {
 
 
 .app-tool__btn + .app-tool__btn {
-    margin-left: 12px;
+    /* margin-left: 12px; */
 }
 
 .app-tool__btn—-timer {
@@ -149,11 +157,19 @@ body {
 }
 
 .app-tool__btn—-pause {
+    display: none;
+}
 
+.app-tool__btn—-pause.show {
+    display: block;
 }
 
 .app-tool__btn—-play {
+    display: block;
+}
 
+.app-tool__btn—-play.hide {
+    display: none;
 }
 
 .app-tool__btn—-dark-theme {
