@@ -52,6 +52,15 @@ body {
     width: var(--timer-size);
 }
 
+.app__timer span {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 60px;
+    font-weight: 800;
+    color: var(--primary);
+}
   
 /* Removes SVG styling that would hide the time label */
 .base-timer__circle {
@@ -66,14 +75,18 @@ body {
 }
 
 .app__tool-list {
-    display: flex;
-    justify-content: center;
     position: fixed;
     bottom: 0;
     width: 100%;
     text-align: center;
     background: rgb(255, 255, 255, 0.4);
-    padding: 20px 0;
+    padding: 16px 0;
+}
+
+.app-tool__btn-list {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 16px;
 }
 
 .app-tool__wrapper {
@@ -84,7 +97,7 @@ body {
 .app-tool__wrapper--song .app-tool__option-list {
     display: none;
     position: absolute;
-    top: -120px;
+    bottom: calc(100% + 10px);
     left: 50%;
     transform: translateX(-50%);
     text-align: left;
@@ -97,7 +110,7 @@ body {
 .app-tool__wrapper--timming .app-tool__option-list {
     display: none;
     position: absolute;
-    top: -120px;
+    bottom: calc(100% + 10px);
     left: 50%;
     transform: translateX(-50%);
     text-align: left;
@@ -178,6 +191,32 @@ body {
 
 .app-tool__btn—-light-theme {
 
+}
+
+#progress {
+    width: 60%;
+    -webkit-appearance: none;
+    height: 6px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: 0.2s;
+    transition: opacity 0.2s;
+}
+
+.progress::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 6px;
+    background-color: var(--primary);
+    cursor: pointer;
+}
+
+.app-tool__active-song h2{
+    font-size: 20px;
+    font-weight: 600;
+    margin: 6px 0 0 0;
 }
 
 /* Responsive for Mobile */

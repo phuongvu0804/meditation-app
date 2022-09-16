@@ -28,34 +28,38 @@
                 <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45" />
               </g>
             </svg>
+            <span></span>
         </div>
         <div class="app__tool-list">
-            <div class="app-tool__wrapper app-tool__wrapper--song">
-                <button class="app-tool__btn app-tool__btn—-song">
-                    <i class="fa-solid fa-music"></i>
-                </button>
-                <div class="app-tool__option-list">
-                    <a>Mediation</a>
-                    <a>Birds and nature</a>
-                    <a>Rainning sound</a>
+            <div class="app-tool__btn-list">
+                <div class="app-tool__wrapper app-tool__wrapper--song">
+                    <button class="app-tool__btn app-tool__btn—-song">
+                        <i class="fa-solid fa-music"></i>
+                    </button>
+                    <div class="app-tool__option-list">
+                    </div>
                 </div>
-            </div>
-            <div class="app-tool__wrapper app-tool__wrapper--timming">
-                <button class="app-tool__btn app-tool__btn—-timer">
-                    <i class="fa-solid fa-clock"></i>
-                </button>
-                <div class="app-tool__option-list">
-                    <a>5 minutes</a>
-                    <a>10 minutes</a>
-                    <a>15 minutes</a>
+                <div class="app-tool__wrapper app-tool__wrapper--timming">
+                    <button class="app-tool__btn app-tool__btn—-timer">
+                        <i class="fa-solid fa-clock"></i>
+                    </button>
+                    <div class="app-tool__option-list"></div>
                 </div>
+                <button class="app-tool__btn app-tool__btn—-pause">
+                    <i class="fa-solid fa-pause"></i>
+                </button>
+                <button class="app-tool__btn app-tool__btn—-play">
+                    <i class="fa-solid fa-play"></i>
+                </button>
             </div>
-            <button class="app-tool__btn app-tool__btn—-pause">
-                <i class="fa-solid fa-pause"></i>
-            </button>
-            <button class="app-tool__btn app-tool__btn—-play">
-                <i class="fa-solid fa-play"></i>
-            </button>
+
+            <input id="progress" class="progress" type="range" value="0" step="1" min="0" max="100">
+
+            <div class="app-tool__active-song">
+                <p>Now playing:</p>
+            </div>
+
+            <audio id="audio" src=""></audio>
         </div>
     </div>
     <script src="./main.js"></script>
