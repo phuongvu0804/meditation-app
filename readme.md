@@ -1,5 +1,4 @@
 # Meditation App
---------------------------------
 A meditation app built with vanilla javaScript.
 Choose your favorite song and a suitable timming option, then start to meditate.
 
