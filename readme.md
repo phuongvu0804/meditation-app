@@ -4,7 +4,7 @@ A meditation app built with vanilla javaScript.
 Choose your favorite song and a suitable timming option, then start to meditate.
 ----------------------------------------------------------------
 ##Installation
-Check out the project through the link: 
+Check out the project through the link: https://meditation-relaxation-app-phuongvu0804.vercel.app/
 Or run it locally by the following commands:
 + git clone https://github.com/phuongvu0804/meditation-app.git;
 + cd meditation-app
